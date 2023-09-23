@@ -1,23 +1,21 @@
+import React, { useState } from 'react';
+import AddFriend from './Components/AddingFriends';
+import FriendList from './Components/FriendList';
 import './App.css';
-import AddingFriends from './Components/AddingFriends';
 
 function App() {
+  const [friends, setFriends] = useState([]);
+
+  const handleAddFriend = (newFriend) => {
+    setFriends([...friends, newFriend]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <h1>Split It!</h1>
+      <AddFriend></AddFriend>
+      <FriendList></FriendList>
+    </section>
   );
 }
 
