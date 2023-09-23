@@ -21,7 +21,7 @@ function ExpenseInput({ onAddExpense }) {
         onChange={(e) => setDescription(e.target.value)}
       />
       <input
-        type="text"
+        type="number"
         placeholder="Expense amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}

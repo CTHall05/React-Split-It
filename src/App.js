@@ -17,6 +17,10 @@ function App() {
     setExpenses([...expenses, expense]);
   };
 
+  const handleClearExpenses = (expense) => {
+    setExpenses([]);
+  };
+
   const balances = calculateBalances(friends, expenses); // Calculate the Balance
 
   return (
@@ -36,6 +40,7 @@ function App() {
           ))}
         </ul>
       </div>
+      <button onClick={handleClearExpenses}>Clear</button>
     </section>
   );
 }
