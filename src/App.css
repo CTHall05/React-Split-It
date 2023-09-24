@@ -1,38 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* App.css */
 .App {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #0056b3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.split-it-container {
+  background-color: #ffa500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type='text'],
+input[type='number'] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* Friend List Container */
+/* App.css */
+/* App.css */
+.friend-list-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start; /* Align items to the start of the container */
 }
 
-.App-link {
-  color: #61dafb;
+.friend-info {
+  display: flex; /* Use flexbox to align friend name and expense */
+  align-items: center; /* Vertically align friend name and expense */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.friend-name {
+  flex-grow: 1; /* Allow the name to grow and take up remaining space */
+}
+
+.friend-expense {
+  margin-left: auto; /* Push the expense to the right */
 }

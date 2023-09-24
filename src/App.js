@@ -24,23 +24,25 @@ function App() {
   const balances = calculateBalances(friends, expenses); // Calculate the Balance
 
   return (
-    <section>
-      <h1>Split It!</h1>
-      <AddFriend onAddFriend={handleAddFriend}></AddFriend>
-      <FriendList friends={friends} expenses={expenses}></FriendList>
-      <ExpenseInput onAddExpense={handleAddExpense}></ExpenseInput>
-      {/* Display Balances */}
-      <div>
-        <h2>Friend Balances:</h2>
-        <ul>
-          {friends.map((friend, index) => (
-            <li key={index}>
-              {friend}: ${balances[friend].toFixed(2)}
-            </li>
-          ))}
-        </ul>
+    <section className="App">
+      <div className="split-it-container">
+        <h1>Split It!</h1>
+        <AddFriend onAddFriend={handleAddFriend}></AddFriend>
+        <FriendList friends={friends} expenses={expenses}></FriendList>
+        <ExpenseInput onAddExpense={handleAddExpense}></ExpenseInput>
+        {/* Display Balances */}
+        <div>
+          <h2>Friend Balances:</h2>
+          <ul className="friend-list-container">
+            {friends.map((friend, index) => (
+              <li key={index}>
+                {friend}: ${balances[friend].toFixed(2)}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button onClick={handleClearExpenses}>Clear</button>
       </div>
-      <button onClick={handleClearExpenses}>Clear</button>
     </section>
   );
 }
